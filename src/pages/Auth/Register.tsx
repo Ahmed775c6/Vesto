@@ -82,7 +82,7 @@ const Register: Component = () => {
         <h1 class="text-3xl dark:text-white text-gray-900 font-semibold">Welcome to Vesto ✌️</h1>
         <p class="text-gray-600 dark:text-gray-400">Create your account to get started</p>
 
-        <div class="mt-4">
+        <div class=" p-4">
           <label class="flex gap-3">
             Your name : <span class="text-rose-500 text-xl">*</span>
           </label>
@@ -99,7 +99,7 @@ const Register: Component = () => {
           </Show>
         </div>
 
-        <div>
+        <div class="p-4">
           <label class="flex gap-3">
             Email : <span class="text-rose-500 text-xl">*</span>
           </label>
@@ -116,7 +116,7 @@ const Register: Component = () => {
           </Show>
         </div>
 
-        <div>
+        <div class="p-4">
           <label class="flex gap-3">
             Password : <span class="text-rose-500 text-xl">*</span>
           </label>
@@ -133,7 +133,7 @@ const Register: Component = () => {
           </Show>
         </div>
 
-        <div>
+        <div class="p-4"> 
           <label>Your Company Name :</label>
           <input 
             type="text" 

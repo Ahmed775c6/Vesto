@@ -75,7 +75,7 @@ const Login: Component = () => {
         <h1 class="text-3xl dark:text-white text-gray-900 font-semibold">Welcome back to Vesto ✌️</h1>
         <p class="text-gray-600 dark:text-gray-400">Sign in to continue your journey</p>
 
-        <div class="mt-4">
+        <div class="mt-4 p-4">
           <label class="flex gap-3">
             Email : <span class="text-rose-500 text-xl">*</span>
           </label>
@@ -92,7 +92,7 @@ const Login: Component = () => {
           </Show>
         </div>
 
-        <div>
+        <div class="p-4">
           <label class="flex gap-3">
             Password : <span class="text-rose-500 text-xl">*</span>
           </label>

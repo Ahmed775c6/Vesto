@@ -59,7 +59,9 @@ button {
   background-position: center;
   background-repeat: no-repeat;
 }
-
+.br{
+  border : 2px dotted  ;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     color: #f6f6f6;

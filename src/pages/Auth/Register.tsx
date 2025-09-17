@@ -89,7 +89,7 @@ const Register: Component = () => {
           <input 
             type="text" 
             placeholder="your name ... " 
-            class="p-4 rounded-md dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
             value={name()}
             onInput={(e) => setName(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().name }}
@@ -106,7 +106,7 @@ const Register: Component = () => {
           <input 
             type="email" 
             placeholder="your email ... " 
-            class="p-4 rounded-md dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
             value={email()}
             onInput={(e) => setEmail(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().email }}
@@ -123,7 +123,7 @@ const Register: Component = () => {
           <input 
             type="password" 
             placeholder="your password ... " 
-            class="p-4 rounded-md dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
             value={password()}
             onInput={(e) => setPassword(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().password }}
@@ -138,7 +138,7 @@ const Register: Component = () => {
           <input 
             type="text" 
             placeholder="your Company name ... " 
-            class="p-4 rounded-md dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
             value={company()}
             onInput={(e) => setCompany(e.currentTarget.value)}
           />
@@ -150,7 +150,7 @@ const Register: Component = () => {
 
         <button 
           type="submit" 
-          class="bg-[#4169E1] text-white py-2 px-4 rounded-md mt-2 hover:bg-[#5A7DFF] transition-colors disabled:opacity-50"
+          class="bg-[#4169E1] text-white py-2 px-4 rounded-sm mt-2 hover:bg-[#5A7DFF] transition-colors disabled:opacity-50"
           disabled={isSubmitting()}
         >
           {isSubmitting() ? "Creating Account..." : "Create Account"}

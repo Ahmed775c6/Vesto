@@ -67,7 +67,7 @@ const Login: Component = () => {
   }
 
   return (
-    <main class="w-full h-screen flex">
+    <main class="w-full h-screen flex flex-row-reverse">
       <div class="w-full bg-image-101 h-full hidden md:block relative">
         {/* Background image would be here */}
       </div>
@@ -82,7 +82,7 @@ const Login: Component = () => {
           <input 
             type="email" 
             placeholder="your email ... " 
-            class="p-4 rounded-md dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
             value={email()}
             onInput={(e) => setEmail(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().email }}
@@ -99,7 +99,7 @@ const Login: Component = () => {
           <input 
             type="password" 
             placeholder="your password ... " 
-            class="p-4 rounded-md dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
             value={password()}
             onInput={(e) => setPassword(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().password }}
@@ -131,7 +131,7 @@ const Login: Component = () => {
 
         <button 
           type="submit" 
-          class="bg-[#4169E1] text-white py-2 px-4 rounded-md mt-2 hover:bg-[#5A7DFF] transition-colors disabled:opacity-50"
+          class="bg-[#4169E1] text-white py-2 px-4 rounded-sm mt-2 hover:bg-[#5A7DFF] transition-colors disabled:opacity-50"
           disabled={isSubmitting()}
         >
           {isSubmitting() ? "Signing In..." : "Sign In"}

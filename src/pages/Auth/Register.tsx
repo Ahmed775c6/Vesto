@@ -1,6 +1,8 @@
 import { createSignal, Show, Component } from "solid-js";
-import { invoke } from "@tauri-apps/api/core";
+import { useNavigate } from "@solidjs/router";
 import ContactPopup from "../../components/ContactPopup";
+import LoadingPopup from "../../components/LoadingAuthification";
+
 
 interface FormErrors {
   name?: string;
@@ -9,8 +11,10 @@ interface FormErrors {
   submit?: string;
 }
 
+
+
 const Register: Component = () => {
-  const [greetMsg, setGreetMsg] = createSignal("");
+
   const [name, setName] = createSignal("");
   const [email, setEmail] = createSignal("");
   const [password, setPassword] = createSignal("");
@@ -18,7 +22,8 @@ const Register: Component = () => {
   const [errors, setErrors] = createSignal<FormErrors>({});
   const [showContact, setShowContact] = createSignal(false);
   const [isSubmitting, setIsSubmitting] = createSignal(false);
-
+  const [showLoading, setShowLoading] = createSignal(false);
+  const navigate = useNavigate();
   // Validate form inputs
   function validateForm(): boolean {
     const newErrors: FormErrors = {};
@@ -39,39 +44,55 @@ const Register: Component = () => {
     return Object.keys(newErrors).length === 0;
   }
 
-  async function handleSubmit(e: Event) {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    if (!validateForm()) {
-      setIsSubmitting(false);
-      return;
-    }
-    
-    try {
-      // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-      setGreetMsg(await invoke("greet", { name: name() }));
-      // Here you would typically send the form data to your backend
-      console.log("Form submitted:", { 
-        name: name(), 
-        email: email(), 
-        password: password(), 
-        company: company() 
-      });
-      
-      // Reset form after successful submission
-      setName("");
-      setEmail("");
-      setPassword("");
-      setCompany("");
-      setErrors({});
-    } catch (error) {
-      setErrors({ submit: "Failed to submit form. Please try again." });
-      console.error("Submission error:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
+async function handleSubmit(e: Event) {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setShowLoading(true);
+  
+  if (!validateForm()) {
+    setIsSubmitting(false);
+    setShowLoading(false);
+    return;
   }
+  
+  try {
+    // Add a small delay to show the loading popup
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // 1. MOCK: Create a user object
+    const newUser = {
+      id: Math.random().toString(36).substring(7), // Mock user ID
+      name: name(),
+      email: email(),
+      company: company(),
+      plan: 'none' // <-- This is the crucial part. Set plan to 'none'
+    };
+    
+    // 2. MOCK: Save the user to localStorage (or your state management)
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
+    console.log("User registered with 'none' plan:", newUser);
+    
+    // 3. Reset form
+    setName("");
+    setEmail("");
+    setPassword("");
+    setCompany("");
+    setErrors({});
+    
+    // 4. Navigate to the Upgrade screen
+    // You need to get your router object. How you do this depends on your router.
+    // If you are using @solidjs/router, you might have a `useNavigate` hook.
+    // Let's assume you can import `navigate` from your router.
+    navigate('/upgrade'); // <-- This is the redirect
+
+  } catch (error) {
+    setErrors({ submit: "Failed to submit form. Please try again." });
+    console.error("Submission error:", error);
+  } finally {
+    setIsSubmitting(false);
+    setShowLoading(false);
+  }
+}
 
   return (
     <main class="w-full h-screen flex">
@@ -177,6 +198,11 @@ const Register: Component = () => {
 
       <Show when={showContact()}>
         <ContactPopup onClose={() => setShowContact(false)} />
+      </Show>
+
+      {/* Loading Popup */}
+      <Show when={showLoading()}>
+        <LoadingPopup action="Creating Account" msg="Please wait while we set up your account" />
       </Show>
     </main>
   );

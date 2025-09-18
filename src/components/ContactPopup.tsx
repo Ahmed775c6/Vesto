@@ -130,7 +130,7 @@ const ContactPopup: Component<ContactPopupProps> = (props) => {
         </div>
         
         <div class="p-4 border-t border-gray-200 text-center bg-blue-600 dark:border-gray-700 dark:bg-gray-700">
-          <p class="m-0 text-sm text-white dark:text-gray-300">We typically respond within 24 hours</p>
+          <p class="m-0 text-sm text-white dark:text-gray-300">We typically respond within 15 min</p>
         </div>
       </div>
     </div>

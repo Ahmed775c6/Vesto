@@ -2,12 +2,16 @@ import { createSignal, Show, Component } from "solid-js";
 import { invoke } from "@tauri-apps/api/core";
 import ContactPopup from "../../components/ContactPopup";
 
+import LoadingPopup from "../../components/LoadingAuthification";
 
 interface FormErrors {
   email?: string;
   password?: string;
   submit?: string;
 }
+
+// Loading Popup Component
+
 
 const Login: Component = () => {
   const [greetMsg, setGreetMsg] = createSignal("");
@@ -17,6 +21,7 @@ const Login: Component = () => {
   const [errors, setErrors] = createSignal<FormErrors>({});
   const [showContact, setShowContact] = createSignal(false);
   const [isSubmitting, setIsSubmitting] = createSignal(false);
+  const [showLoading, setShowLoading] = createSignal(false);
 
   // Validate form inputs
   function validateForm(): boolean {
@@ -38,13 +43,18 @@ const Login: Component = () => {
   async function handleSubmit(e: Event) {
     e.preventDefault();
     setIsSubmitting(true);
+    setShowLoading(true);
     
     if (!validateForm()) {
       setIsSubmitting(false);
+      setShowLoading(false);
       return;
     }
     
     try {
+      // Add a small delay to show the loading popup (optional)
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      
       // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
       setGreetMsg(await invoke("greet", { name: email() }));
       // Here you would typically send the login data to your backend
@@ -63,6 +73,7 @@ const Login: Component = () => {
       console.error("Login error:", error);
     } finally {
       setIsSubmitting(false);
+      setShowLoading(false);
     }
   }
 
@@ -120,7 +131,7 @@ const Login: Component = () => {
             <span class="ml-2 text-gray-600 dark:text-gray-400">Remember me</span>
           </label>
           
-          <a href="#" class="text-[#4169E1] hover:text-[#5A7DFF] transition-all hover:underline text-sm">
+          <a href="/forgetpassword" class="text-[#4169E1] hover:text-[#5A7DFF] transition-all hover:underline text-sm">
             Forgot password?
           </a>
         </div>
@@ -158,6 +169,11 @@ const Login: Component = () => {
 
       <Show when={showContact()}>
         <ContactPopup onClose={() => setShowContact(false)} />
+      </Show>
+
+      {/* Loading Popup */}
+      <Show when={showLoading()}>
+        <LoadingPopup action="Signing In" msg = 'Please wait while we authenticate your credentials' />
       </Show>
     </main>
   );

@@ -23,12 +23,11 @@ export default {
       backgroundColor : {
         primary : '#4169E1',
         secondary : '#5A7DFF',
-        light : '#F3F4F6',
-        dark : '#1F2937',
-        darker : '#111827',
-        darkest : '#0F172A',
+        bgTeal : "#48D1CC",
+        bgOrange : "#F4A460",
 
       }
+      
     },
   },
   plugins: [],

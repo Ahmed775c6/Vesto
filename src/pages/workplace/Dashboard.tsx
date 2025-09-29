@@ -6,6 +6,8 @@ import ChartBarRevenu from '../../components/charts/ChartBarRevenu';
 import Cardstates from '../../components/Cardstates';
 import Table from '../../components/Tabels/Table';
 import Navbar from '../../components/Navbar';
+import TopProductsTable from '../../components/Tabels/TopProductsTable';
+import ActivityFeeds from '../../components/ActivityFeeds';
 
 const Dashboard = () => {
   const [sideBarCollapsed, setSideBarCollapsed] = createSignal(true);
@@ -51,6 +53,10 @@ const Dashboard = () => {
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
               <div class="xl:col-span-2">
                 <Table/>
+                <TopProductsTable/>
+              </div>
+              <div class='p-4'>
+<ActivityFeeds/>
               </div>
             </div>
           </main>

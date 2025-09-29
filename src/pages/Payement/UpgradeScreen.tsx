@@ -61,7 +61,7 @@ const UpgradeScreen: Component = () => {
             </button>
           ))}
         </div>
-        <p class="text-sm text-green-400 mt-3">
+        <p class="text-sm text-[#48D1CC] mt-4">
           {billingCycle() === 'yearly' && '🎉 Save 30% with yearly billing!'}
           {billingCycle() === 'quarterly' && '💰 Save 10% with quarterly billing!'}
         </p>

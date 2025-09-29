@@ -100,8 +100,8 @@ async function handleSubmit(e: Event) {
    
       </div>
       <form onSubmit={handleSubmit} class="w-full h-full flex bg-gray-900 flex-col gap-3 p-6 overflow-y-auto">
-        <h1 class="text-3xl dark:text-white text-gray-900 font-semibold">Welcome to Vesto ✌️</h1>
-        <p class="text-gray-600 dark:text-gray-400">Create your account to get started</p>
+        <h1 class="text-3xl text-white font-semibold">Welcome to Vesto ✌️</h1>
+        <p class="text-gray-400">Create your account to get started</p>
 
         <div class=" p-4">
           <label class="flex gap-3">
@@ -110,7 +110,7 @@ async function handleSubmit(e: Event) {
           <input 
             type="text" 
             placeholder="your name ... " 
-            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br bg-gray-900  w-full mt-1 border border-gray-600" 
             value={name()}
             onInput={(e) => setName(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().name }}
@@ -127,7 +127,7 @@ async function handleSubmit(e: Event) {
           <input 
             type="email" 
             placeholder="your email ... " 
-            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br bg-gray-900  w-full mt-1 border border-gray-600" 
             value={email()}
             onInput={(e) => setEmail(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().email }}
@@ -144,7 +144,7 @@ async function handleSubmit(e: Event) {
           <input 
             type="password" 
             placeholder="your password ... " 
-            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br bg-gray-900  w-full mt-1 border border-gray-600" 
             value={password()}
             onInput={(e) => setPassword(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().password }}
@@ -159,7 +159,7 @@ async function handleSubmit(e: Event) {
           <input 
             type="text" 
             placeholder="your Company name ... " 
-            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br bg-gray-900  w-full mt-1 border border-gray-600" 
             value={company()}
             onInput={(e) => setCompany(e.currentTarget.value)}
           />
@@ -182,7 +182,7 @@ async function handleSubmit(e: Event) {
           <a href="/" class="hover:text-[#5A7DFF] text-[#4169E1] transition-colors hover:underline">Sign In</a>
         </p>
 
-        <div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div class="mt-auto pt-4 border-t border-gray-700">
           <p class="text-center text-gray-500 text-sm">
             Need help?{" "}
             <button 

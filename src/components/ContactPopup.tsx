@@ -68,9 +68,9 @@ const ContactPopup: Component<ContactPopupProps> = (props) => {
       class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 backdrop-filter backdrop-blur-sm"
       onClick={handleBackgroundClick}
     >
-      <div class="bg-white dark:bg-gray-800 rounded-sm w-11/12 max-w-[450px] shadow-xl overflow-hidden animate-popIn">
-        <div class="flex justify-between items-center p-5 border-b border-gray-200 dark:border-gray-700 bg-primary">
-          <h2 class="m-0 text-xl font-semibold text-gray-800 dark:text-gray-200">Contact Us</h2>
+      <div class="bg-gray-800 rounded-sm w-11/12 max-w-[450px] shadow-xl overflow-hidden animate-popIn">
+        <div class="flex justify-between items-center p-5 border-b border-gray-700 bg-primary">
+          <h2 class="m-0 text-xl font-semibold text-gray-200">Contact Us</h2>
           <button 
             class="bg-transparent border-none text-2xl cursor-pointer text-gray-100 p-0 w-8 h-8 flex justify-center items-center rounded-full transition-colors hover:bg-white hover:text-gray-800 "
             onClick={props.onClose}
@@ -80,56 +80,56 @@ const ContactPopup: Component<ContactPopupProps> = (props) => {
         </div>
         
         <div class="p-5">
-          <p class="mt-0 mb-6 text-gray-600 dark:text-gray-400">
+          <p class="mt-0 mb-6 text-gray-400">
             We'd love to hear from you! Reach out to us through any of these channels:
           </p>
           
           <div class="flex flex-col gap-4">
             {/* Email/Gmail Option */}
             <div 
-              class="flex items-center p-4 rounded-sm bg-gray-50 cursor-pointer transition-all border border-transparent hover:bg-gray-100 hover:border-gray-300 hover:-translate-y-0.5 dark:bg-gray-700 dark:hover:bg-gray-800 dark:hover:border-gray-600"
+            class="flex items-center p-4 rounded-sm  cursor-pointer transition-all border border-transparent   hover:-translate-y-0.5 bg-gray-700 hover:bg-gray-800 hover:border-gray-600"
               onClick={handleEmailClick}
             >
-              <div class="mr-4 w-10 h-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
+              <div class="mr-4 w-10 h-10 flex items-center justify-center rounded-full bg-red-100  bg-red-900/30 text-red-400">
                 <GmailIcon />
               </div>
               <div>
-                <h3 class="m-0 mb-1 text-lg font-semibold text-gray-800 dark:text-gray-200">Email</h3>
-                <p class="m-0 text-gray-600 dark:text-gray-400 text-sm">support@vestoapp.com</p>
+                <h3 class="m-0 mb-1 text-lg font-semibold text-gray-200">Email</h3>
+                <p class="m-0 text-gray-400 text-sm">support@vestoapp.com</p>
               </div>
             </div>
             
             {/* WhatsApp Option */}
             <div 
-              class="flex items-center p-4 rounded-sm bg-gray-50 cursor-pointer transition-all border border-transparent hover:bg-gray-100 hover:border-gray-300 hover:-translate-y-0.5 dark:bg-gray-700 dark:hover:bg-gray-800 dark:hover:border-gray-600"
+               class="flex items-center p-4 rounded-sm  cursor-pointer transition-all border border-transparent   hover:-translate-y-0.5 bg-gray-700 hover:bg-gray-800 hover:border-gray-600"
               onClick={handleWhatsAppClick}
             >
               <div class="mr-4 w-10 h-10 flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
                 <WhatsAppIcon />
               </div>
               <div>
-                <h3 class="m-0 mb-1 text-lg font-semibold text-gray-800 dark:text-gray-200">WhatsApp</h3>
-                <p class="m-0 text-gray-600 dark:text-gray-400 text-sm">+1 (234) 567-890</p>
+                <h3 class="m-0 mb-1 text-lg font-semibold text-gray-200">WhatsApp</h3>
+                <p class="m-0 text-gray-400 text-sm">+1 (234) 567-890</p>
               </div>
             </div>
             
             {/* Telegram Option */}
             <div 
-              class="flex items-center p-4 rounded-sm bg-gray-50 cursor-pointer transition-all border border-transparent hover:bg-gray-100 hover:border-gray-300 hover:-translate-y-0.5 dark:bg-gray-700 dark:hover:bg-gray-800 dark:hover:border-gray-600"
+              class="flex items-center p-4 rounded-sm  cursor-pointer transition-all border border-transparent   hover:-translate-y-0.5 bg-gray-700 hover:bg-gray-800 hover:border-gray-600"
               onClick={handleTelegramClick}
             >
               <div class="mr-4 w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
                 <TelegramIcon />
               </div>
               <div>
-                <h3 class="m-0 mb-1 text-lg font-semibold text-gray-800 dark:text-gray-200">Telegram</h3>
-                <p class="m-0 text-gray-600 dark:text-gray-400 text-sm">@vestoapp</p>
+                <h3 class="m-0 mb-1 text-lg font-semibold text-gray-200">Telegram</h3>
+                <p class="m-0 text-gray-400 text-sm">@vestoapp</p>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="p-4 border-t border-gray-200 text-center bg-blue-600 dark:border-gray-700 dark:bg-gray-700">
+        <div class="p-4 border-t text-center  border-gray-700 bg-gray-700">
           <p class="m-0 text-sm text-white dark:text-gray-300">We typically respond within 15 min</p>
         </div>
       </div>

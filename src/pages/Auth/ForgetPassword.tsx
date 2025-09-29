@@ -72,10 +72,10 @@ const ForgetPassword: Component = () => {
       
       <div class="w-full h-full flex bg-gray-900 flex-col gap-6 p-8 overflow-y-auto">
         <div class="text-center">
-          <h1 class="text-3xl dark:text-white text-gray-900 font-semibold mb-2">
+          <h1 class="text-3xl text-white  font-semibold mb-2">
             Forgot Password?
           </h1>
-          <p class="text-gray-600 dark:text-gray-400">
+          <p class="text-gray-400">
             {isSubmitted() 
               ? "Check your email for reset instructions" 
               : "Enter your email to reset your password"
@@ -92,7 +92,7 @@ const ForgetPassword: Component = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email address..." 
-                class="p-4 rounded-sm br dark:bg-gray-800 bg-gray-100 w-full border border-gray-300 dark:border-gray-600 text-white placeholder-gray-400" 
+                class="p-4 rounded-sm br bg-gray-800  w-full border  border-gray-600 text-white placeholder-gray-400" 
                 value={email()}
                 onInput={(e) => setEmail(e.currentTarget.value)}
                 classList={{ "border-rose-500": !!errors().email }}

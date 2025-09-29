@@ -14,9 +14,12 @@
       {
         "title": "vesto",
         "width": 1200,
-        "height": 800
-      }
-    ],
+        "height": 800,
+        "center": true
+  
+     
+      }        ],
+        
     "security": {
  
       "csp": null

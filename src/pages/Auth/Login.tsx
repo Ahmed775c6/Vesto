@@ -1,5 +1,5 @@
 import { createSignal, Show, Component } from "solid-js";
-import { invoke } from "@tauri-apps/api/core";
+
 import ContactPopup from "../../components/ContactPopup";
 
 import LoadingPopup from "../../components/LoadingAuthification";
@@ -14,7 +14,7 @@ interface FormErrors {
 
 
 const Login: Component = () => {
-  const [greetMsg, setGreetMsg] = createSignal("");
+
   const [email, setEmail] = createSignal("");
   const [password, setPassword] = createSignal("");
   const [rememberMe, setRememberMe] = createSignal(false);
@@ -55,9 +55,9 @@ const Login: Component = () => {
       // Add a small delay to show the loading popup (optional)
       await new Promise(resolve => setTimeout(resolve, 5000));
       
-      // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-      setGreetMsg(await invoke("greet", { name: email() }));
-      // Here you would typically send the login data to your backend
+
+
+
       console.log("Login submitted:", { 
         email: email(), 
         password: password(), 
@@ -68,6 +68,7 @@ const Login: Component = () => {
       setEmail("");
       setPassword("");
       setErrors({});
+      window.location.href = '/dashboard';
     } catch (error) {
       setErrors({ submit: "Failed to login. Please check your credentials and try again." });
       console.error("Login error:", error);
@@ -83,8 +84,8 @@ const Login: Component = () => {
         {/* Background image would be here */}
       </div>
       <form onSubmit={handleSubmit} class="w-full h-full flex bg-gray-900 flex-col gap-3 p-6 overflow-y-auto">
-        <h1 class="text-3xl dark:text-white text-gray-900 font-semibold">Welcome back to Vesto ✌️</h1>
-        <p class="text-gray-600 dark:text-gray-400">Sign in to continue your journey</p>
+        <h1 class="text-3xl text-white  font-semibold">Welcome back to Vesto ✌️</h1>
+        <p class="text-gray-400">Sign in to continue your journey</p>
 
         <div class="mt-4 p-4">
           <label class="flex gap-3">
@@ -93,7 +94,7 @@ const Login: Component = () => {
           <input 
             type="email" 
             placeholder="your email ... " 
-            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br bg-gray-900  w-full mt-1 border  border-gray-600" 
             value={email()}
             onInput={(e) => setEmail(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().email }}
@@ -110,7 +111,7 @@ const Login: Component = () => {
           <input 
             type="password" 
             placeholder="your password ... " 
-            class="p-4 rounded-sm br dark:bg-gray-900 bg-gray-100 w-full mt-1 border border-gray-300 dark:border-gray-600" 
+            class="p-4 rounded-sm br bg-gray-900 w-full mt-1 border border-gray-600" 
             value={password()}
             onInput={(e) => setPassword(e.currentTarget.value)}
             classList={{ "border-rose-500": !!errors().password }}
@@ -128,7 +129,7 @@ const Login: Component = () => {
               checked={rememberMe()}
               onChange={(e) => setRememberMe(e.currentTarget.checked)}
             />
-            <span class="ml-2 text-gray-600 dark:text-gray-400">Remember me</span>
+            <span class="ml-2  text-gray-400">Remember me</span>
           </label>
           
           <a href="/forgetpassword" class="text-[#4169E1] hover:text-[#5A7DFF] transition-all hover:underline text-sm">

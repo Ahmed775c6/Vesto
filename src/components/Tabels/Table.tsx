@@ -83,7 +83,7 @@ const Table = () => {
           <table class="w-full min-w-[600px]">
             <thead>
               <tr class="bg-slate-50/50 dark:bg-slate-800/50">
-                <th class="text-left p-3 sm:p-4 text-sm font-semibold text-slate-600 dark:text-slate-300">Order ID</th>
+                <th class="text-left p-3 sm:p-4 text-sm font-semibold text-slate-600 dark:text-slate-300"> ID</th>
                 <th class="text-left p-3 sm:p-4 text-sm font-semibold text-slate-600 dark:text-slate-300">Product</th>
                 <th class="text-left p-3 sm:p-4 text-sm font-semibold text-slate-600 dark:text-slate-300">Customer</th>
                 <th class="text-left p-3 sm:p-4 text-sm font-semibold text-slate-600 dark:text-slate-300">Amount</th>

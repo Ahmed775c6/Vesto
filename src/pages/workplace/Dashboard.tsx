@@ -8,6 +8,7 @@ import Table from '../../components/Tabels/Table';
 import Navbar from '../../components/Navbar';
 import TopProductsTable from '../../components/Tabels/TopProductsTable';
 import ActivityFeeds from '../../components/ActivityFeeds';
+import Footer from '../../components/Footer';
 
 const Dashboard = () => {
   const [sideBarCollapsed, setSideBarCollapsed] = createSignal(true);
@@ -59,8 +60,11 @@ const Dashboard = () => {
 <ActivityFeeds/>
               </div>
             </div>
+                 <Footer/>
           </main>
+              
         </div>
+   
       </div>
     </div>
   );

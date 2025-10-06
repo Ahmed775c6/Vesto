@@ -45,19 +45,21 @@ const Dashboard = () => {
             {/**charts */}
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-3">
               <div class="xl:col-span-2 p-4">
-                <ChartBarRevenu/>
+                    <Table/>
+             
               </div>
               <div class="space-y-6 p-4">
-                <CategoryChart/>
+                <ActivityFeeds/>
+            
               </div>
             </div>
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
               <div class="xl:col-span-2">
-                <Table/>
+               <ChartBarRevenu/>
                 <TopProductsTable/>
               </div>
               <div class='p-4'>
-<ActivityFeeds/>
+    <CategoryChart/>
               </div>
             </div>
                  <Footer/>

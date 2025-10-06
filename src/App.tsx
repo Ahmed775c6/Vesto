@@ -7,6 +7,7 @@ import ForgetPassword from "./pages/Auth/ForgetPassword";
 import UpgradeScreen from "./pages/Payement/UpgradeScreen";
 import Dashboard from "./pages/workplace/Dashboard";
 import SplashScreen from "./components/SplashScreen";
+import Messanger from "./pages/workplace/Messanger";
 import "./App.css";
 
 // Create a theme context
@@ -62,6 +63,7 @@ function App() {
           <Route path="/forgetpassword" component={ForgetPassword} />
           <Route path="/upgrade" component={UpgradeScreen} /> 
           <Route path="/dashboard" component={Dashboard} />
+              <Route path="/messages" component={Messanger} />
         </Router>
       </Show>
     </div>

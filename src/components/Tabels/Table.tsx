@@ -21,6 +21,44 @@ const orders: Order[] = [
     status: "confirmed",
     date: "24/05/2025 at 11:59"
   },
+    {
+    id: "#01",
+    product: "Wireless Headphones",
+    customer: "Chouuikh Ahmed",
+    amount: 25.99,
+    status: "confirmed",
+    date: "24/05/2025 at 11:59"
+  },
+    {
+    id: "#01",
+    product: "Wireless Headphones",
+    customer: "Chouuikh Ahmed",
+    amount: 25.99,
+    status: "confirmed",
+    date: "24/05/2025 at 11:59"
+  },
+    {
+    id: "#01",
+    product: "Wireless Headphones",
+    customer: "Chouuikh Ahmed",
+    amount: 25.99,
+    status: "confirmed",
+    date: "24/05/2025 at 11:59"
+  },  {
+    id: "#01",
+    product: "Wireless Headphones",
+    customer: "Chouuikh Ahmed",
+    amount: 25.99,
+    status: "confirmed",
+    date: "24/05/2025 at 11:59"
+  },  {
+    id: "#01",
+    product: "Wireless Headphones",
+    customer: "Chouuikh Ahmed",
+    amount: 25.99,
+    status: "confirmed",
+    date: "24/05/2025 at 11:59"
+  },
   {
     id: "#02",
     product: "Smart Watch",

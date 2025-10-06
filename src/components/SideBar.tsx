@@ -95,11 +95,13 @@ const SideBar = (props: Params) => {
     });
   };
 
-  const handleItemClick = (itemId: string, hasSubmenu: boolean) => {
+  const handleItemClick = (itemId: string,ITEMnAME  : string,hasSubmenu: boolean) => {
     if (hasSubmenu) {
       toggleSubmenu(itemId);
+      window.location.href = "#"; // Prevent navigation for items with submenu
     } else {
       props.onPageChange(itemId);
+      window.location.href = `${ITEMnAME}`; // Prevent default navigation
     }
   };
 
@@ -139,7 +141,7 @@ const SideBar = (props: Params) => {
           {(item) => (
             <div class="bg-transparent">
               <button
-                onClick={() => handleItemClick(item.id, !!item.submenu)}
+                onClick={() => handleItemClick(item.id, item.label,!!item.submenu)}
                 class={`w-full flex items-center bg-transparent text-gray-900 dark:text-white gap-3 p-3 rounded-xl transition-all duration-200
                   ${props.currentPage === item.id 
                     ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-blue-500/75" 
